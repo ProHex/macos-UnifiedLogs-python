@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "macos-unifiedlogs"
+version = "0.1.0"
+description = "Parse macOS Unified Log format (tracev3 files)"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Aria Akhavan"}
+]
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: System :: Logging",
+]
+keywords = ["macos", "unified-logs", "forensics", "logging", "tracev3"]
+
+dependencies = [
+    "lz4>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mandiant/macos-UnifiedLogs"
+Repository = "https://github.com/mandiant/macos-UnifiedLogs"
+
+[tool.setuptools.packages.find]
+include = ["macos_unifiedlogs*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
